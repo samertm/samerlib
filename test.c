@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <samer/stack.h>
+#include <samerlib/stack.h>
 
 int main() {
         int x, y, z, *a, i;

@@ -7,6 +7,7 @@ test: test.c
 all: libstack.so
 
 install: all
+	install stack.h /usr/local/include/samerlib/stack.h
 	install libstack.so /usr/local/lib/libstack.so
 
 libstack.so: stack.o
