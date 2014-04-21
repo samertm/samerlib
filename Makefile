@@ -7,13 +7,21 @@ INSTALL=install -D
 test: test.c
 	$(CC) -g -o test test.c -lstack -lqueue
 
-all: libstack.so libqueue.so
+all: libstack.so libqueue.so libbtree.so
 
 install: all
 	$(INSTALL) queue.h $(HEADERDIR)/queue.h
 	$(INSTALL) stack.h $(HEADERDIR)/stack.h
+	$(INSTALL) btree.h $(HEADERDIR)/btree.h
 	$(INSTALL) libqueue.so $(LIBDIR)/libqueue.so
 	$(INSTALL) libstack.so $(LIBDIR)/libstack.so
+	$(INSTALL) libbtree.so $(LIBDIR)/libbtree.so
+
+libbtree.so: btree.o
+	$(CC) -shared -o libbtree.so btree.o
+
+btree.o: btree.c
+	$(CC) $(CFLAGS) btree.c
 
 libqueue.so: queue.o
 	$(CC) -shared -o libqueue.so queue.o
