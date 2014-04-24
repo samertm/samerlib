@@ -1,5 +1,5 @@
-#ifndef __STACK_H
-#define __STACK_H
+#ifndef _SAMERLIB_STACK_H
+#define _SAMERLIB_STACK_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,4 +17,4 @@ void *stack_pop(stack *s);
 void stack_clear(stack *s);
 static void stack_double_capacity(stack *s);
 
-#endif /* __STACK_H */
+#endif /* _SAMERLIB_STACK_H */

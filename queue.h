@@ -1,5 +1,6 @@
-#ifndef __QUEUE_H_
-#define __QUEUE_H_
+#ifndef _SAMERLIB_QUEUE_H_
+#define _SAMERLIB_QUEUE_H_
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -16,7 +17,10 @@ void queue_push_left(queue *q, void *d);
 void queue_push_right(queue *q, void *d);
 void *queue_pop_left(queue *q);
 void *queue_pop_right(queue *q);
+void *queue_peek_left(queue *q);
+void *queue_peek_right(queue *q);
 void queue_clear(queue *q);
 static void queue_shift_right(queue *q);
 static void queue_double_capacity(queue *q);
-#endif /* __QUEUE_H_ */
+
+#endif /* _SAMERLIB_QUEUE_H_ */

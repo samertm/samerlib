@@ -62,6 +62,20 @@ void *queue_pop_right(queue *q) {
         return q->data[q->end-- - 1];
 }
 
+void *queue_peek_left(queue *q) {
+        if (q->start == q->end) {
+                return NULL;
+        }
+        return q->data[q->start];
+}
+
+void *queue_peek_right(queue *q) {
+        if (q->start == q->end) {
+                return NULL;
+        }
+        return q->data[q->end - 1];
+}
+
 void queue_clear(queue *q) {
         q->start = 0;
         q->end = 0;
