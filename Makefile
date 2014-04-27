@@ -4,9 +4,6 @@ HEADERDIR=/usr/local/include/samerlib
 LIBDIR=/usr/local/lib
 INSTALL=install -D
 
-test: test.c
-	$(CC) -g -o test test.c -lstack -lqueue
-
 all: libstack.so libqueue.so libbtree.so
 
 install: all
@@ -16,6 +13,9 @@ install: all
 	$(INSTALL) libqueue.so $(LIBDIR)/libqueue.so
 	$(INSTALL) libstack.so $(LIBDIR)/libstack.so
 	$(INSTALL) libbtree.so $(LIBDIR)/libbtree.so
+
+test: test.c
+	$(CC) -g -o test test.c -lstack -lqueue
 
 libbtree.so: btree.o
 	$(CC) -shared -o libbtree.so btree.o
