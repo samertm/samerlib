@@ -13,6 +13,7 @@ install: all
 	$(INSTALL) libqueue.so $(LIBDIR)/libqueue.so
 	$(INSTALL) libstack.so $(LIBDIR)/libstack.so
 	$(INSTALL) libbtree.so $(LIBDIR)/libbtree.so
+	ldconfig
 
 test: test.c
 	$(CC) -g -o test test.c -lstack -lqueue
