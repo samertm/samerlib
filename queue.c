@@ -1,5 +1,8 @@
 #include "queue.h"
 
+static void queue_shift_right(queue *q);
+static void queue_double_capacity(queue *q);
+
 queue *new_queue() {
         int queue_initial_size = 10;
         queue *q = malloc(sizeof(queue));

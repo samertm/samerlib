@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <samerlib/stack.h>
 #include <samerlib/queue.h>
+#include <samerlib/map.h>
 
-#define TEST_QUEUE
+#define TEST_MAP
 
 int main() {
 #ifdef TEST_STACK
@@ -39,5 +40,12 @@ int main() {
         }
         printf("\n");
 #endif /* TEST_QUEUE */
+#ifdef TEST_MAP
+        map *m = new_map();
+        map_add(m, "bro", 1);
+        fprintf(stderr, "%p", map_get(m, "bro"));
+        free_map(m);
+        fprintf(stderr, "donezo\n");
+#endif /* TEST_MAP */
         return 0;
 }

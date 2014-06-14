@@ -20,7 +20,5 @@ void *queue_pop_right(queue *q);
 void *queue_peek_left(queue *q);
 void *queue_peek_right(queue *q);
 void queue_clear(queue *q);
-static void queue_shift_right(queue *q);
-static void queue_double_capacity(queue *q);
 
 #endif /* _SAMERLIB_QUEUE_H_ */
